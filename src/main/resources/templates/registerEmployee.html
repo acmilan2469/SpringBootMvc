@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+
+    <head>
+    <style>
+            .button {
+              border: none;
+              color: white;
+              padding: 10px 26px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 14px;
+              margin: 3px 2px;
+              cursor: pointer;
+            }
+
+            .button1 {background-color: #4CAF50;} /* Green */
+            .button2 {background-color: #008CBA;} /* Blue */
+
+        </style>
+    </head>
+
+    <body>
+
+        <h2>Add Employee:</h2>
+
+        <form th:action="@{/employee/save}" method="post" id="addEmployeeForm">
+            <div>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br>
+            </div><br>
+            <div>
+                <label for="address">Address:</label><br>
+                <input type="text" id="address" name="address">
+            </div><br>
+            <div>
+                <label for="age">Age:</label><br>
+                <input type="text" id="age" name="age">
+            </div><br>
+            <button class="button button1">Register Employee </button>
+            <br><br>
+            <a th:href="@{/employee/findAll}" class= "btn btn-primary">Show All Employees</a>
+        </form>
+
+    </body>
+</html>
+
