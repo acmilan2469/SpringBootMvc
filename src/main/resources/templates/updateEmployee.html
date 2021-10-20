@@ -25,20 +25,24 @@
 
         <h2>Add Employee:</h2>
 
-        <form th:action="@{/employee/save}" method="post" id="addEmployeeForm">
+        <form th:action="@{/employee/update}" method="post" id="addEmployeeForm" th:object="${employee}">
+            <div>
+                <label for="id">Name:</label><br>
+                <input th:field="*{id}" type="text" id="id" name="id" readonly><br>
+            </div><br>
             <div>
                 <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name"><br>
+                <input th:field="*{name}" type="text" id="name" name="name"><br>
             </div><br>
             <div>
                 <label for="address">Address:</label><br>
-                <input type="text" id="address" name="address">
+                <input th:field="*{address}"type="text" id="address" name="address">
             </div><br>
             <div>
                 <label for="age">Age:</label><br>
-                <input type="text" id="age" name="age">
+                <input th:field="*{age}" type="text" id="age" name="age">
             </div><br>
-            <button class="button button1">Register Employee </button>
+            <button class="button button1">Update Employee </button>
             <br><br>
             <a th:href="@{/employee/findAll}" class= "btn btn-primary">Show All Employees</a>
         </form>

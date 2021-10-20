@@ -12,11 +12,8 @@
               font-size: 16px;
               margin: 4px 2px;
               cursor: pointer;
+              background-color: #4CAF50;
             }
-
-            .button1 {background-color: #4CAF50;} /* Green */
-            .button2 {background-color: #008CBA;} /* Blue */
-
         </style>
     </head>
     <body>
@@ -24,9 +21,10 @@
         <h1>Welcome To employee Management</h1>
 
         <a th:href="@{/employee/registerEmployee}">
-            <button class="button button1">Add Invoice </button>
+            <button class="button">Add Employee     </button>
         </a>
-        <button class="button button2">Show All Invoices</button>
-
+        <a th:href="@{/employee/findAll}">
+            <button class="button">Show All Employees</button>
+        </a>
     </body>
 </html>

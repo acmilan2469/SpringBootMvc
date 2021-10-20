@@ -1,0 +1,78 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <style>
+            table,
+            th,
+            td {
+              border: 1px solid black;
+              border-collapse: collapse;
+            }
+
+            th,
+            td {
+              padding: 20px;
+            }
+
+            th {
+              text-align: left;
+            }
+
+            .button {
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              background-color: #4CAF50;
+            }
+  </style>
+    </head>
+
+    <body>
+        <div class="col-5">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header bg-info text-center text-white">
+                        <h3>List Of Employees: </h3>
+                    </div>
+                    <div>
+                        <table style="width:80%">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Amount</th>
+                                <th>Edit/Delete</th>
+                            </tr>
+                            <tr th:each="obj:${list}">
+                                <td th:text="${obj.id}"></td>
+                                <td th:text="${obj.name}"></td>
+                                <td th:text="${obj.address}"></td>
+                                <td th:text="${obj.age}"></td>
+                                <td>
+                                    <a th:href="@{/employee/edit(id=${obj.id})}" style="color:blue;">EDIT </a>
+                                    <a th:href="@{/employee/delete(id=${obj.id})}" style="color:red;">DELETE</a>
+                                </td>
+                            </tr>
+                        </table>
+                        <br><br><br>
+                        <a th:href="@{/employee/}">
+                            <button class="button">Home     </button>
+                        </a>
+                        <a th:href="@{/employee/registerEmployee}">
+                            <button class="button">Add Employee     </button>
+                        </a>
+                    </div>
+                    <div>
+                        <span></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
